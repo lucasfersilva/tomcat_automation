@@ -61,6 +61,8 @@ def home():
         config = pdfkit.configuration(wkhtmltopdf="/usr/local/bin/wkhtmltopdf")
         pdfkit.from_string(output_text, 'invoice_generated.pdf', configuration=config, css='pdf_generation/invoice.css')
 
+        return "Invoice generated successfully", 200
+
     return render_template('index.html')
 
 if __name__ == "__main__":
