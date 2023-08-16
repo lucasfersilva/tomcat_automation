@@ -63,6 +63,8 @@ def home():
 
         return "Invoice generated successfully", 200
 
+        return "Invoice generated successfully", 200
+
     return render_template('index.html')
 
 if __name__ == "__main__":
