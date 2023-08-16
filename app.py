@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        client_name = request.form.get('client_name')
+        client_name = request.form.get('client_name', 'Lucas Fernandes')
         item1 = request.form.get('item1')
         subtotal1 = request.form.get('subtotal1')
         item2 = request.form.get('item2')
