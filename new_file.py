@@ -1,4 +1,7 @@
+from flask import Flask, render_template
 import os
+
+app = Flask(__name__)
 
 def search_files(path):
     file_dict = {}
@@ -7,11 +10,11 @@ def search_files(path):
             file_dict[file] = os.path.join(root, file)
     return file_dict
 
-def main():
+@app.route('/')
+def home():
     path = "C:/"
     file_dict = search_files(path)
-    for file, path in file_dict.items():
-        print(f"File: {file}, Path: {path}")
+    return render_template('index.html', file_dict=file_dict)
 
 if __name__ == "__main__":
-    main()
+    app.run(debug=True)

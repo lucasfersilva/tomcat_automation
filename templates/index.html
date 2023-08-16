@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Search</title>
+</head>
+<body>
+    <h1>File Search Results</h1>
+    <ul>
+    {% for file, path in file_dict.items() %}
+        <li>File: {{ file }}, Path: {{ path }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
