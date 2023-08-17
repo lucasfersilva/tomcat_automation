@@ -19,7 +19,7 @@ def home():
 
 if __name__ == '__main__':
     app.run(debug=True)
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 import jinja2
 import pdfkit
 import datetime
@@ -66,6 +66,13 @@ def home():
         return "Invoice generated successfully", 200
 
     return render_template('index.html')
+
+@app.route('/invoice', methods=['GET'])
+def get_invoice():
+    try:
+        return send_file('invoice_generated.pdf', attachment_filename='invoice.pdf')
+    except Exception as e:
+        return str(e)
 
 if __name__ == "__main__":
     app.run(debug=True)
