@@ -19,8 +19,14 @@ document.querySelector('#stop').addEventListener('click', () => {
     mediaRecorder.stop();
     document.querySelector('#start').disabled = false;
     document.querySelector('#stop').disabled = true;
-    const audioBlob = new Blob(recordedBlobs, {type: 'audio/webm'});
-    const audioUrl = URL.createObjectURL(audioBlob);
-    const audio = document.querySelector('#player');
-    audio.src = audioUrl;
 });
+
+mediaRecorder.ondataavailable = (event) => {
+    if (event.data.size > 0) {
+        recordedBlobs.push(event.data);
+        const audioBlob = new Blob(recordedBlobs, {type: 'audio/webm'});
+        const audioUrl = URL.createObjectURL(audioBlob);
+        const audio = document.querySelector('#player');
+        audio.src = audioUrl;
+    }
+};
