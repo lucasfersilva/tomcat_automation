@@ -1,67 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>File Search</title>
-    <script src="/static/recordAudio.js"></script>
+    <title>Audio Recorder</title>
+    <script src="script.js"></script>
 </head>
 <body>
-    <h1>File Search Results</h1>
-    <ul>
-    {% for file, path in file_dict.items() %}
-        <li>File: {{ file }}, Path: {{ path }}</li>
-    {% endfor %}
-    </ul>
-    <button onclick="startRecording()">Start Recording</button>
-    <button onclick="stopRecording()">Stop Recording</button>
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Form</title>
-</head>
-<body>
-    <form method="POST">
-        <label for="client_name">Client Name:</label><br>
-        <input type="text" id="client_name" name="client_name"><br>
-        <label for="item1">Item 1:</label><br>
-        <input type="text" id="item1" name="item1"><br>
-        <label for="subtotal1">Subtotal 1:</label><br>
-        <input type="text" id="subtotal1" name="subtotal1"><br>
-        <label for="item2">Item 2:</label><br>
-        <input type="text" id="item2" name="item2"><br>
-        <label for="subtotal2">Subtotal 2:</label><br>
-        <input type="text" id="subtotal2" name="subtotal2"><br>
-        <label for="item3">Item 3:</label><br>
-        <input type="text" id="item3" name="item3"><br>
-        <label for="subtotal3">Subtotal 3:</label><br>
-        <input type="text" id="subtotal3" name="subtotal3"><br>
-        <input type="submit" value="Submit">
-    </form>
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Invoice Generator</title>
-</head>
-<body>
-    <form method="POST">
-        <label for="client_name">Client Name:</label><br>
-        <input type="text" id="client_name" name="client_name"><br>
-        <label for="item1">Item 1:</label><br>
-        <input type="text" id="item1" name="item1"><br>
-        <label for="subtotal1">Subtotal 1:</label><br>
-        <input type="text" id="subtotal1" name="subtotal1"><br>
-        <label for="item2">Item 2:</label><br>
-        <input type="text" id="item2" name="item2"><br>
-        <label for="subtotal2">Subtotal 2:</label><br>
-        <input type="text" id="subtotal2" name="subtotal2"><br>
-        <label for="item3">Item 3:</label><br>
-        <input type="text" id="item3" name="item3"><br>
-        <label for="subtotal3">Subtotal 3:</label><br>
-        <input type="text" id="subtotal3" name="subtotal3"><br>
-        <input type="submit" value="Submit">
-    </form>
+    <button id="start">Start Recording</button>
+    <button id="stop" disabled>Stop Recording</button>
+    <audio id="player" controls></audio>
 </body>
 </html>
