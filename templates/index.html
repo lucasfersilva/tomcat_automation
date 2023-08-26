@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>File Search</title>
+    <script src="/static/recordAudio.js"></script>
 </head>
 <body>
     <h1>File Search Results</h1>
@@ -10,6 +11,8 @@
         <li>File: {{ file }}, Path: {{ path }}</li>
     {% endfor %}
     </ul>
+    <button onclick="startRecording()">Start Recording</button>
+    <button onclick="stopRecording()">Stop Recording</button>
 </body>
 </html>
 <!DOCTYPE html>
