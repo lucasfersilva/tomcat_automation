@@ -34,3 +34,19 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+
+#open-source {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+#open-source a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+}
